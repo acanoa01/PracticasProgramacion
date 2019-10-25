@@ -1,0 +1,30 @@
+Practica P-CTL
+
+Alumno: Alberto Ca�o �lvarez
+
+Horas dedicadas:
+
+Problemas surgidos al realizar la practica:
+
+Respuestas a la preguntas:
+
+Apartado 030101 Ejercicio 04
+	-el primer caso se cumpliria si n2 fuera menor que n1, cosa que no es verdad o que !a && b  tuviera valor 1, que tampoco se cumple.
+	-El segundo caso, que es el resultado, se cumple porque n1 es menor que n2 y al ser un o logico, si una parte es 1 obtenemos 1.
+	-El tercer caso se cumpliria si ambas condiciones fuese un 1 logico, pero n1 es menor que n2, por tsanto, no se cumple.
+	
+Apartado 030101 ejercicio 09
+	-Son distintos porque cada objeto apunta a un direccion distinta en memoria a pesar de tener el mismo valor.
+	
+Apartado 030101 ejercicio 10
+	-N1 y N2 son distintos porque no apuntan a la misma direccion en memoria.
+	-N1 y AUX son iguales porque aux toma el valor que tiene guardado N1.
+	
+	Tras aplicar el m�todo equals():
+	-N1 y N2 son iguales porque los valores son el mismo
+	-N1 y AUX son iguales porque AUX es una referencia de N1
+	-N2 y Aux son iguales porque AUX tiene el valor de N1 y ambos objetos(N1 y N2) tienen guardado el mismo valor.
+	
+Apartado 030102 ejercicio 03
+	-El operador > y < no es válido
+	
