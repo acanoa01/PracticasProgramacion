@@ -119,37 +119,59 @@ public class NumeroEntero {
 
 	
 	 //Inicio modificacion del ejercicio03 Apartado030102. 
-	 int compareTo(NumeroEntero n){
-		 
-		 int value;
-		 NumeroEntero n1;
-		 n1 = new NumeroEntero(this.valor);
-		if( n1.getValor() < n.getValor() ) {
-			value = -1;
-		}
-		else if( n1.getValor() == n.getValor() ) {
-			value = 0;
-		}
-		else {
-			value =  1;
-		}
-		return value;
+	 
+	  int compareTo(NumeroEntero n){
+	  
+		 	if(this.valor < n.getValor() ) {
+		 		
+		 		return -1;
+		 	}
+		 	else if(this.valor > n.getValor()) {
+		 		
+		 		return 1;
+		 	}else {
+		 		return 0;
+		 	}
+		 		
 	 } 
 	 //Fin modificacion del ejercicio03 Apartado030102.
 	 
+	  
+	
+	 //Inicio modificacion del ejercicio05 Apartado030202. 
+	  int numeroDigitos(){
+		  int digitos = 0;
+		  int numDigitos = this.valor;
+		  
+		  while( numDigitos!=0) {
+			  numDigitos = numDigitos/10;
+			  digitos++;
+		  }
+		  return digitos;
+	  }
 
-	/*
-	 * -- Inicio modificacion del ejercicio05 Apartado030202. int numeroDigitos(){
-	 * 
-	 * }
-	 *
-	 * int inverso(){
-	 * 
-	 * }
-	 *
-	 * boolean esCapicua(){
-	 * 
-	 * } -- Fin modificacion del ejercicio05 Apartado030202.
-	 */
+	 int inverso(){
+		 int n, inverso=0;
+		 int digitoFinal;
+		 n = this.valor;
+		 	while(n!=0) {
+		 		digitoFinal= n%10;
+		 		inverso = (inverso*10)+digitoFinal;
+		 		n= n/10;
+		 	}
+		 	return inverso;
+	 }
+	 
+	 boolean esCapicua(){
+		 boolean capicua = false;
+		 while(!capicua) {
+			 if(this.valor == inverso()) 
+				 capicua = true;
+		 }
+		 System.out.println("¿Es capicua este número?: ");
+		 return capicua;
+	 }
+	 //Fin modificacion del ejercicio05 Apartado030202.
+	
 
 }

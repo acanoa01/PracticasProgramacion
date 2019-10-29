@@ -72,6 +72,7 @@ public class Apartado030103 extends Apartado {
 		int num;
 		System.out.println("Introduzca un número entero: ");
 		num= Teclado.readInteger();
+		num=num%10;
 		switch(num) {
 		case 0:
 			if(num==0)
@@ -155,10 +156,31 @@ public class Apartado030103 extends Apartado {
 	 * 
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "inicio de cadenas");
 
 		// Inicio modificacion
+		String cadena;
+		System.out.println("Inserte una cadena de caracteres: ");
+		cadena = Teclado.readString();
+		switch(cadena.charAt(0) ) {
+		case 'a':
+		case 'e':
+		case 'i':
+		case 'o':
+		case 'u':
+			System.out.println("El primer carácter es una vocal en minúsculas");
+		case 'A':
+		case 'E':
+		case 'I':
+		case 'O':
+		case 'U':
+			System.out.println("El primer carácter es una vocal en mayúsculas");
+		default:
+			System.out.println("El primer caracter no es una vocal");
 		
+		}
+		
+			
 		// Fin modificacion
 	}
 }

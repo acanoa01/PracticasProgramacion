@@ -130,10 +130,28 @@ public class Apartado030201 extends Apartado {
 	 * 
 	 */
 	public void ejercicio05() {
-		cabecera("05","");
+		cabecera("05","mayor y menor de 10 numeros introducidos por teclado");
 
 		// Inicio modificacion
-		
+		int max =0;
+		int min =0;
+		int num;
+		for( int i=0; i<10 ;i++) {
+			System.out.println("Inserta el número: ");
+			num = Teclado.readInteger();
+				if(i==0) {
+					max = num;
+					min = num;
+				}else {
+					if (num>max) {
+						max = num;
+					}
+					else if( num<min) {
+						min = num;
+					}
+				}		
+		}
+		System.out.println("El mayor es: "+max+" y el menor es: "+min);
         // Fin modificacion
 	}
 
@@ -185,9 +203,25 @@ public class Apartado030201 extends Apartado {
 	 *
 	 */
 	public void ejercicio07() {
-		cabecera("07", "");
+		cabecera("07", "subcadenas");
 
 		// Inicio modificacion
+		String cadena;
+		StringBuffer vocales = new StringBuffer();
+		StringBuffer caracteres = new StringBuffer();
+		
+		System.out.println("Inserte una cadena:");
+		cadena = Teclado.readString();
+		cadena.toLowerCase();
+		for(int i=0; i<cadena.length(); i++) {
+			if( (cadena.charAt(i)=='a')|| (cadena.charAt(i)=='e')||(cadena.charAt(i)=='i')||(cadena.charAt(i)=='o')||(cadena.charAt(i)=='u') ) {
+				vocales.append(cadena.charAt(i) );
+			}else
+				caracteres.append(cadena.charAt(i));
+			}
+			System.out.println("Vocales de la cadena introducida: "+vocales);
+			System.out.println("cadena vocales en mayusculas: "+vocales.toString().toUpperCase());
+			System.out.println("cadena caracteres en mayusculas: "+caracteres.toString().toUpperCase());
 		// Fin modificacion
 	}
 
@@ -212,9 +246,22 @@ public class Apartado030201 extends Apartado {
 	 *
 	 */
 	public void ejercicio08() {
-		cabecera("08", "");
+		cabecera("08", "comparacion de cadenas");
 
 		// Inicio modificacion
+		int numero;
+		String cadena, cadenaMayor= " ";
+		System.out.println("Cuantas cadenas desea introducir?");
+		numero = Teclado.readInteger();
+		
+		for(int i=1;i<=numero;i++) {
+			System.out.println("Inserte la "+i+"º cadena: ");
+			cadena = Teclado.readString();
+			if(cadena.length()>cadenaMayor.length() ) {
+				cadenaMayor = cadena;
+			}
+		}
+		System.out.println("La cadena mas larga es: "+cadenaMayor);
 		// Fin modificacion
 	}
 
@@ -241,28 +288,28 @@ public class Apartado030201 extends Apartado {
 	 *     
 	 */
 	public void ejercicio09() {
-		cabecera("09", "");
+		cabecera("09", "comparacion de rectangulos");
 
 		// Inicio modificacion
 		
-		/* Quitar comentarios
-	    int n=4; //Numero de rectangulos a leer
-		 Rectangulo rectanguloMaximo,rectangulo;
 		
-		for ()
+	    int n=4; //Numero de rectangulos a leer
+		 Rectangulo rectanguloMaximo = new Rectangulo();
+		 Rectangulo rectangulo = null;
+		 int base, altura;
+		
+		for (int i=0; i<=n;i++)
 		{
 			System.out.println("Introduce la base del rectangulo "+i+" :");
 			base=Teclado.readInteger();
 			System.out.println("Introduce la altura del rectangulo "+i+" :");
 			altura=Teclado.readInteger();
 			rectangulo=new Rectangulo(base,altura);
-			
-			
+			if(rectangulo.compareTo(rectanguloMaximo)== 1) {
+				rectanguloMaximo = rectangulo;
+			}
 		}
-		
-		System.out.println("El rectangulo con mayor area es "+ );
-		
-		*/
+		System.out.println("El rectangulo con mayor area es "+ rectanguloMaximo);
 		// Fin modificacion
 	}
 			
@@ -276,7 +323,7 @@ public class Apartado030201 extends Apartado {
 	 *
 	 * Ejemplo
 	 * 
-	 * <pre>C	F	C	F	C	F	C	F	C	F	
+	 * C	F	C	F	C	F	C	F	C	F	
 	 * 0	32	1	33	2	35	3	37	4	39
 	 * 5	41	6	42	7	44	8	46	9	48
 	 * 10	50	11	51	12	53	13	55	14	57
@@ -286,10 +333,10 @@ public class Apartado030201 extends Apartado {
 	 * 30	86	31	87	32	89	33	91	34	93
 	 * 35	95	36	96	37	98	38	100	39	102
 	 * 40	104	41	105	42	107	43	109	44	111
-	 * 45	113	46	114	47	116	48	118	49	120</pre>	
+	 * 45	113	46	114	47	116	48	118	49	120	
 	 */
 	public void ejercicio10() {
-		cabecera("10", "");
+		cabecera("10", "Tabla de conversión");
 
 		TablaConversion tabla=new TablaConversion(5,10);
 		tabla.imprimir();

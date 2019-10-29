@@ -28,10 +28,24 @@ public class Apartado030202 extends Apartado {
 		cabecera("01","");
 
 		// Inicio modificacion
+		int i,numero,max,min;
+		i=0;
+		System.out.println("Inserte un número: ");
+		numero = Teclado.readInteger();
+		max = numero;
+		min = numero;
+		while(i<10) {
+			System.out.println("Inserte un número: ");
+			numero = Teclado.readInteger();
+				if(numero>max)
+					max = numero;
+				else if (numero<min) 
+					min = numero;
+				i++;
+		}
+		System.out.println("El maximo es: "+max);
+		System.out.println("El minimo es: "+min);
 		
-		
-		
-					
         // Fin modificacion
 	}
 
@@ -45,7 +59,19 @@ public class Apartado030202 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
-		
+		int numero, numeroAnt;
+		boolean repeat = false;
+		System.out.println("Inserte un número: ");
+		numero = Teclado.readInteger();
+		numeroAnt= numero;
+			while( (!repeat) && (numero!=0) ) {
+				System.out.println("Inserte un número: ");
+				numero = Teclado.readInteger();
+				if( numero == numeroAnt) 
+					repeat = true;
+				numeroAnt = numero;
+				
+			}
 		
 		// Fin modificacion
 	}
@@ -79,6 +105,23 @@ public class Apartado030202 extends Apartado {
 		cabecera("04", "");
 
 		// Inicio modificacion
+		int media=0, leidos=0, suma =0;
+		int numero, numero5 =0;
+		boolean end = false;
+			while( !end ) {
+				System.out.println("Inserte un numero: ");
+				numero = Teclado.readInteger();
+					if(numero ==5)
+						numero5++;
+					if(numero5==3)
+						end = true;
+					suma = suma+numero;
+					leidos++;
+				
+			}
+			media = suma/leidos;
+			System.out.println("la media es: "+media);
+		
 		// Fin modificacion
 	}
 
@@ -96,9 +139,14 @@ public class Apartado030202 extends Apartado {
 	 *
 	 */
 	public void ejercicio05() {
-		cabecera("05","");
+		cabecera("05","Método numeroDigitos, inverso(), esCapicua()");
 
 		// Inicio modificacion
+		NumeroEntero numero = new NumeroEntero(1331);
+		System.out.println(numero);
+		System.out.println("DIGITOS DE ESTE NÚMERO: "+ numero.numeroDigitos());
+		System.out.println("EL INVERSO ES: "+ numero.inverso());
+		System.out.println(numero.esCapicua());
         // Fin modificacion
 	}
 
@@ -137,7 +185,7 @@ public class Apartado030202 extends Apartado {
 	 */
 	
 	public void ejercicio06() {
-		cabecera("06", "");
+		cabecera("06", "Partido de tenis");
 		
 		Jugador j1=new Jugador("Federer",5);
         Jugador j2=new Jugador("Nadal",4);
@@ -149,5 +197,6 @@ public class Apartado030202 extends Apartado {
         partido.jugar();
         
         System.out.println("El ganador es: "+ partido.ganador().getNombre());
+        System.out.println("Puntos del ganador: "+partido.ganador().getPuntosATP());
 	}
 }

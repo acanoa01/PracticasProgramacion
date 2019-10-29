@@ -90,26 +90,24 @@ public class Apartado030102 extends Apartado {
 	 *
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Método compareTo()");
 
         // Inicio modificacion
 	
-        NumeroEntero n1 = new NumeroEntero(10);
-        NumeroEntero n2 = new NumeroEntero(10);
-        
-        
-        if (n1.compareTo(n2)){
-        	 System.out.println("N1-> "+n1);
-             System.out.println("N1 es mayor que N2");
-        }
-        else if (n1.compareTo(n2)) {
-            System.out.println("N1 -> "+n1);
-            System.out.println("N1 es menor que N2");
-        }
-        else
-           System.out.println("N1 y N2 son iguales -> N1 ->"+n1+" N2 -> "+n2);
-		// Fin modificacion
+		NumeroEntero n1 = new NumeroEntero(10);
+		NumeroEntero n2 = new NumeroEntero(10);
 		
+		
+		 if (n1.compareTo(n2) ==1){
+			 System.out.println("N1 -> "+n1);
+			 System.out.println("N1 es mayor que N2");
+		 } else if (n1.compareTo(n2)== -1) {
+			 System.out.println("N1 -> "+n1);
+					 System.out.println("N1 es menorque N2");
+		 }else
+			 System.out.println("N1 y N2 son iguales -> N1 ->" +n1+" N2 -> "+n2);
+		 
+		//Fin modificación
 	}
 
 	/**

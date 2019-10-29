@@ -23,9 +23,31 @@ public class Apartado030204 extends Apartado {
 	 * entre dos numeros n1 y n2 introducidos por teclado
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Números perfectos");
 
 		// Inicio modificacion
+		int n1,n2;
+		int suma;
+		int divisor;
+		int perfecto;
+		System.out.println("Inserte valor para n1: ");
+		n1 = Teclado.readInteger();
+		System.out.println("Iserte valor para n2: ");
+		n2 = Teclado.readInteger();
+		
+		for(perfecto=n1; perfecto<=n2; perfecto++) {		//Bucle para leer los números comprendidos entre n1 y n2
+			suma = 0;					// Inicializamos las variables suma y divisor
+			divisor=1;
+			do {						//Mientras el divisor sea menor que el numero hacemos la sentencia if
+				if(perfecto % divisor==0)
+					suma = suma + divisor;
+				divisor++;
+			}while( divisor < perfecto);
+			
+			if( perfecto == suma)		//Si elnumero es igual a la suma de sus divisores menores que el,el numero es pefecto
+				System.out.println("El número "+perfecto+ " es perfecto");
+				
+		}
         // Fin modificacion
 	}
 
@@ -42,20 +64,20 @@ public class Apartado030204 extends Apartado {
 	 * 
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Veracidad de cheques");
 
 		Cheque cheque=null;
 		
-		//Modificar el numero de cheque para peobar
+		//Modificar el numero de cheque para probar
 		//cheque=new Cheque("1000988887");    
-        //cheque=new Cheque("1010098888");
+        cheque=new Cheque("1010098888");
         //cheque=new Cheque("1009808880");   
         
        
-         if (cheque.esFalso()== true)
+         if (cheque.esFalso()==true)
         	 System.out.println("El cheque es falso");
          else
-             System.out.println("Elche no es falso");
+             System.out.println("El cheque no es falso");
 	}
 
 	/**
@@ -86,7 +108,7 @@ public class Apartado030204 extends Apartado {
 	 * 
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "figuras");
 
 		// Inicio modificacion
 		int n;
@@ -110,13 +132,27 @@ public class Apartado030204 extends Apartado {
 			System.out.println();
 		}
 		//Cuadrado vacio
-		System.out.println("\nCuadrado");
-		for(int i=0; i<n; i++) {
-			for(int j=0; j<i; j++) { 
-				System.out.print(i);	
+		System.out.println("\nCuadrado Vacio");
+		
+		//Linea superior
+		for(int i=0;i<n; i++) {
+			System.out.print("*");
+		}
+		System.out.println();
+		
+		//Cuadrado intermedio
+		 for(int i = 0; i < n-2; i++) {
+             System.out.print("*");
+             for(int j = 0; j < n-2; j++) {
+                 System.out.print(" ");
+             }
+             System.out.println("*");
+         }
+		 //Linea inferior
+		 for(int i=0;i<n; i++) {
+				System.out.print('*');
 			}
 			System.out.println();
-		}
 		// Fin modificacion
 	}
 
@@ -145,45 +181,44 @@ public class Apartado030204 extends Apartado {
 		double num;
 		int option;
 		int tries = 0;
-		
-		do{
-			
-			System.out.println("Vamos a jugar a un juego");
-			System.out.println("Yo pienso en un numero y tu tienes 5 intentos para adivinarlo!!");
-			
-			//Contador de intentos
-			for(int i=1; i<=5; i++) {
-				System.out.println("Intento "+i+" : ");
-				System.out.println("¿Qué número estoy pensando?");
-				num = Teclado.readInteger();
-				if(num>random) {
-					System.out.println("El número " + num + " introducido es mayor");
+			do{
+				System.out.println("Vamos a jugar a un juego");
+				System.out.println("Yo pienso en un numero y tu tienes 5 intentos para adivinarlo!!");
+				
+				//Contador de intentos
+				for(int i=1; i<=5; i++) {
+					System.out.println("Intento "+i+" : ");
+					System.out.println("¿Qué número estoy pensando?");
+					num = Teclado.readInteger();
+					if(num>random) {
+						System.out.println("El número " + num + " introducido es mayor");
+						
+					}
+					else if(num<random) {
+						System.out.println("El numero introducido es menor");
+						tries= tries+1;
+					}
+					else if(num==random) {
+						System.out.println("Enhorabuena, has acertado");
+						System.out.println("Número de intentos: "+i);
+						i=5;
+					}
+					//else if(num!=Teclado.readDouble()) {
+						//System.out.println("Eso no es un número, acabas de perder un intento");
+						//tries= tries+1;
+					//}
 					tries=tries+1;
-				}
-				else if(num<random) {
-					System.out.println("El numero introducido es menor");
-					tries= tries+1;
-				}
-				else if(num==random) {
-					System.out.println("Enhorabuena, has acertado");
-					System.out.println("Número de intentos: "+i);
-					i=5;
-				}
-				else if(num!=Teclado.readDouble()) {
-					System.out.println("Eso no es un número, acabas de perder un intento");
-					tries= tries+1;
-				}
-				else if(tries==i){
+				if(tries==5){
 					System.out.println("Oh,lo siento, no has acertado");
 					System.out.println("El numero era: " + random);
 				}
-				
+					
 			}
-			
-			System.out.println("¡Quieres volver a retarme?");
-			System.out.println("1:Si, por supuesto      2:Tu ganas, me retiro");
-			option=Teclado.readInteger();
-		}while(option!=2);
+				
+				System.out.println("¡Quieres volver a retarme?");
+				System.out.println("1:Si, por supuesto      2:Tu ganas, me retiro");
+				option=Teclado.readInteger();
+			}while(option!=2);
 		// Fin modificacion
 	}
 }

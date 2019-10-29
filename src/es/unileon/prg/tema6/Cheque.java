@@ -35,16 +35,46 @@ public class Cheque {
 	 * 
 	 * @return true si el cheque es falso, false en caso contrario
 	 */
-
+	
 	public boolean esFalso() {
+	
 		boolean esFalso = false;
 		// Inicio modificacion - ejercicio02() de la clase Apartado030204 -.
-		
-		for(int i=0;i<this.DIGITOS;i++) {
-			if()
+		int nCeros = 0;
+		int nNumeros = 0;
+		int i;
+		char digit;
+		//Recorremos el cheque
+		i=0;
+		while( !esFalso && i< this.DIGITOS) 
+		{
+			digit = this.numeroDeCheque.charAt(i);
+			//Comparamos las posiciones del cheque
+			if(digit=='0') 
+			{
+				nCeros++;
+				nNumeros =0;
+				if(nCeros>=3) 
+				{
+					esFalso = true;
+				}
+			}
+			else 
+			{
+				nCeros = 0;
+				nNumeros++;
+				if(nNumeros>=4) 
+				{
+					esFalso = true;
+				}
+			}
+			i++;
 		}
+		
+			
 		// Fin modificacion - ejercicio02() de la clase Apartado030204 -.
 		return esFalso;
 	}
-
+	
+	
 }

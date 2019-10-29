@@ -46,8 +46,10 @@ public class TablaConversion
        
         // Imprimir cabecera
         //Inicio modificacion del ejercicio10 del Apartado030201
-
-        
+        for(int i=0;i<columnas; i++) {
+        System.out.print("C"+SEPARADOR+"F"+SEPARADOR);
+        }
+        System.out.println();
         
         //Fin modificacion del ejercicio10 del Apartado030201
         
@@ -70,7 +72,13 @@ public class TablaConversion
          int c; // temperatura en celsius
          int f; // temperatura en fahrenheit
          //Inicio modificacion del ejercicio10 del Apartado030201
-
+         for(int i=0;i<columnas;i++) {
+        	 c = estaLinea * this.columnas +i;
+        	 f = fahrenheit(c);
+        	 System.out.print(c + SEPARADOR + f+ SEPARADOR);
+        	
+        			 
+         }
          
          
          //Fin modificacion del ejercicio10 del Apartado030201

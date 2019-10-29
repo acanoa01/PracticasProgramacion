@@ -2,7 +2,7 @@ Practica P-CTL
 
 Alumno: Alberto Ca�o �lvarez
 
-Horas dedicadas:
+Horas dedicadas: 16h
 
 Problemas surgidos al realizar la practica:
 
@@ -27,4 +27,7 @@ Apartado 030101 ejercicio 10
 	
 Apartado 030102 ejercicio 03
 	-El operador > y < no es válido
+		Tras aplicar el método compareTo():
+			Ambos objetos son iguales al tener guardados el mismo valor, el cual, es el que se esta comparando.
+			
 	

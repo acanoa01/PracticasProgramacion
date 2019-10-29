@@ -105,11 +105,8 @@ public class Rectangulo {
 	public boolean esUnCuadrado() {
 		boolean esUnCuadrado = false;
 		// Inicio modificacion ejercicio07
-		if(base==altura && (base>0 && altura>0)) {
+		if(base==altura && (base>0 && altura>0)) 
 			esUnCuadrado=true;
-			System.out.println("Es un cuadrado");
-		}else
-			System.out.println("No es un cuadrado");
 		// Fin modificacion ejercicio07
 		return esUnCuadrado;
 
@@ -143,23 +140,34 @@ public class Rectangulo {
 
 	public String toString() {
 		StringBuffer salida = new StringBuffer();
-		Rectangulo cuadrado;
-		salida.append("Rectangulo: " + " ");
-		salida.append("base: " + this.base + " ");
-		salida.append("altura: " + this.altura + " ");
+		//Rectangulo cuadrado;
+		salida.append("Rectangulo: " + " \n");
+		salida.append("base: " + this.base + " \n");
+		salida.append("altura: " + this.altura + " \n");
 		// Inicio modificacion ejercicio07
-		salida.append(" "+ esUnCuadrado()+ " ");
+		salida.append("¿Es un cuadrado?: "+ esUnCuadrado()+ " ");
 		// Fin modificacion ejercicio07
 		return salida.toString();
 
 	}
 
-	/*
-	 * -- Inicio modificacion del ejercicio09 Apartado030201. int
-	 * compareTo(Rectangulo rectangulo){
-	 * 
-	 * 
-	 * } -- Fin modificacion del ejercicio09 Apartado030201.
-	 */
+	
+	  
+	 int compareTo(Rectangulo rectangulo){
+	 //Inicio modificacion del ejercicio09 Apartado030201.
+		 int value;
+		 if(this.getArea() > rectangulo.getArea()) {
+			 value = 1;
+		 }
+		 else if(this.getArea() == rectangulo.getArea()) {
+			 value = 0;
+		 }else {
+			 value = -1;
+		 }
+		 return value;
+	 //Fin modificacion del ejercicio09 Apartado030201.
+	 }
+	 
+	 
 
 }

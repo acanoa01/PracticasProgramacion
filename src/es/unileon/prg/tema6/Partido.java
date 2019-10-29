@@ -66,7 +66,32 @@ public class Partido {
 	 */
 	public void jugar() {
 		// Inicio modificacion - ejercicio06() de la clase Apartado030202 -
-
+		double resultado1, resultado2;
+		double pj1, pj2;
+		boolean ganar= false;
+		
+		pj1 = Math.random()*jugador1.getPuntosATP();
+		pj2 = Math.random()*jugador2.getPuntosATP();
+		resultado1= Math.random() * pj1;
+		resultado2= Math.random() * pj2;
+		
+		while( ganar == false) {
+			if( resultado1 > resultado2) {
+				ganador = jugador1;
+				jugador1.setPuntosATP(pj1+1);
+				ganar= true;
+			}
+			else if( resultado1 < resultado2) {
+				ganador = jugador2;
+				jugador2.setPuntosATP(pj2+1);
+				ganar = true;
+			}else {
+				resultado1= Math.random() * pj1;
+				resultado2= Math.random() * pj2;
+			}
+		}
+		
+		
 		// Fin modificacion - ejercicio06() de la clase Apartado030202 -
 
 	}

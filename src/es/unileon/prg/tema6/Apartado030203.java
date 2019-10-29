@@ -50,9 +50,15 @@ public class Apartado030203 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
-		
-		
-		
+		int num, numAnt=0;
+		boolean repeat = false;
+		do {
+			System.out.println("Inserte un número: ");
+			num = Teclado.readInteger();
+				if(num == numAnt) 
+					repeat= true;
+				numAnt=num;
+		}while( (!repeat) && (num!=0) );
 		// Fin modificacion
 	}
 
@@ -66,9 +72,23 @@ public class Apartado030203 extends Apartado {
 	 * 
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Rectangulos");
 
 		// Inicio modificacion
+		Rectangulo rectangulo = null;
+		int base, altura;
+		do {
+			System.out.println("Introduce la base del rectangulo: ");
+			base = Teclado.readInteger();
+			System.out.println("Introduce la altura del rectangulo: ");
+			altura = Teclado.readInteger();
+			
+				rectangulo = new Rectangulo(base, altura);
+				System.out.println(rectangulo);
+			
+		}while(base>0 && altura>0);
+	
+		
 		// Fin modificacion
 	}
 
@@ -97,25 +117,23 @@ public class Apartado030203 extends Apartado {
 
 		// Inicio modificacion
 		int num;
-		//int suma = 0;
-		
-		System.out.println("Introduzca un numero: ");
-		num=Teclado.readInteger();
-		 
-		for(int i=0; i<=num; i++) {	
-			if(num%i==0) {
-				System.out.println("Los divisores son: "+ i);
-			}
-			/**	
-				if(suma+i!=num)
-					System.out.println("Este número no es perfecto");
+		int divisor =1;
+		int sumaDivisores =0;
+		System.out.println("Inserte un número: ");
+		num = Teclado.readInteger();
+		do {
+			if( num % divisor == 0) {
+				sumaDivisores= sumaDivisores+ divisor;
 				
-				}else
-					System.out.println("Este número es perfecto");
-			*/	
+			}
+			divisor++;
+		}while(divisor < num);
+		
+		if(sumaDivisores == num) {
+			System.out.println("Este número es perfecto");
+		}else {
+			System.out.println("Este numero no es perfecto");
 		}
-		
-		
 		// Fin modificacion
 	}
 }
