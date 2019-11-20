@@ -1,0 +1,12 @@
+Practica P-ARR
+
+Alumno:
+
+Horas dedicadas:
+
+Problemas surgidos al realizar la practica:
+
+Respuestas a la preguntas:
+Apartado 030102 ejercicio 02
+	-No se muestra el 0 porque el for no lo incluye.
+	-No se muestra la llave porque la condicion final es mas grande que el tamaño del array.
